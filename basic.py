@@ -8,9 +8,12 @@ from pygame import (K_UP, K_DOWN, K_LEFT, K_RIGHT, KEYDOWN,K_ESCAPE,K_SPACE,RLEA
 
 # Starting pygame and creating window
 pygame.init()
-    
-window_height = 1080
-window_width = 1920
+
+#Get your screen resolution
+res = pygame.display.get_desktop_sizes()
+
+window_height = int(res[0][1])
+window_width = int(res[0][0])
 
 window = pygame.display.set_mode((window_width,window_height))
 
