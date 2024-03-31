@@ -9,8 +9,8 @@ from pygame import (K_UP, K_DOWN, K_LEFT, K_RIGHT, KEYDOWN,K_ESCAPE,K_SPACE,RLEA
 # Starting pygame and creating window
 pygame.init()
     
-window_height = 400
-window_width = 800
+window_height = 1080
+window_width = 1920
 
 window = pygame.display.set_mode((window_width,window_height))
 
@@ -58,7 +58,7 @@ class Enemy(pygame.sprite.Sprite):
             randint(0,window_height),
         )
     )
-        self.speed=  randint(1,3)
+        self.speed=  randint(1,6)
         
     def update(self):
         self.rect.move_ip(-self.speed, 0)
@@ -119,7 +119,7 @@ def main():
         clock.tick(24)  # Limit the frame rate to 24 frames per second
         
         ADDENEMY = pygame.USEREVENT + 1
-        pygame.time.set_timer(ADDENEMY, 500)  # Create a timer event that triggers every 500 milliseconds
+        pygame.time.set_timer(ADDENEMY, 250)  # Create a timer event that triggers every 250 milliseconds
         ADDCLOUD = pygame.USEREVENT + 2
         pygame.time.set_timer(ADDCLOUD, 750)  # Create a timer event that triggers every 750 milliseconds
         
